@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html ⚡ lang="en">
+  <head>
+    
+   <script async src="https://cdn.ampproject.org/v0.js"></script>
+
+   <script async custom-element="amp-story"
+        src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
+    
+    <meta charset="utf-8">
+    <title>sohan</title>
+    <link rel="canonical" href="https://example.com/your-page-url">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap">
+        
+
+
+    
+    
+
+      
+    <style amp-custom>
+        body {
+        font-family: "Rubik", sans-serif;
+        font-size: 1rem;
+        line-height: 1.5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        min-height: 100vh;
+        background: #ffd2d2;
+      }
+
+
+
+      /*--------------------------------*/
+
+      body {
+        background: linear-gradient(to bottom right, #FFC0CB, #FF69B4, #FF1493);
+        /*background: linear-gradient(to bottom, #FFC0CB, #FF69B4);*/
+      }
+
+
+
+      /*======= CSS variables =======*/
+      :root{
+        --white-color: #ffffff;
+        --dark-color: #222;
+        --body-bg-color: #fff;
+        --section-bg-color: #ffb4ac;
+        --section-bg-color2: #ff978b;
+        --navigation-item-hover-color: hwb(216 45% 3%);
+
+        --text-shadow: 0 5px 25px rgb(6, 5, 5);
+        --box-shadow: 0 5px 25px rgb(17, 10, 10);
+
+        --scroll-bar-color: #fff;
+        --scroll-thumb-color: #97aaff;
+        --scroll-thumb-hover-color: #ae0080;
+      }
+
+
+
+      /*======= Scroll bar =======*/
+      ::-webkit-scrollbar{
+        width: 11px;
+        background: var(--scroll-bar-color);
+      }
+
+      ::-webkit-scrollbar-thumb{
+        width: 100%;
+        background: var(--scroll-thumb-color);
+        border-radius: 2em;
+      }
+
+      ::-webkit-scrollbar-thumb:hover{
+        background: var(--scroll-thumb-hover-color);
+      }
+
+      /*======= Main CSS =======*/
+      *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+      }
+
+      /*body{
+        background: var(--body-bg-color);
+      }*/
+
+
+
+      section{
+        position: relative;
+      }
+
+      .section{
+        
+        color: #b10862/*var(--white-color)*/;
+        background: linear-gradient(to bottom, var(--section-bg-color), var(--section-bg-color2)); 
+        border-radius: 40px; /* add rounded corners to the background */
+        padding: 35px 200px;
+        transition: 0.3s ease;
+      }
+
+      /*======= Header =======*/
+      header{
+        z-index: 999;
+        position: fixed;
+        width: 100%;
+        height: calc(5rem + 1rem);
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        transition: 0.5s ease;
+        transition-property: height, background;
+      }
+
+      header.sticky{
+        height: calc(2.5rem + 1rem);
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(20px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      header .nav-bar{
+        position: relative;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 200px;
+        transition: 0.3s ease;
+      }
+
+      .nav-close-btn, .nav-menu-btn{
+        display: none;
+      }
+
+      .nav-bar .logo{
+        color: var(--white-color);
+        font-size: 1.8em;
+        font-weight: 600;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        text-decoration: none;
+        text-shadow: var(--text-shadow);
+      }
+
+      .navigation .nav-items a{
+        color: var(--white-color);
+        font-size: 1em;
+        text-decoration: none;
+        text-shadow: var(--text-shadow);
+      }
+
+      .navigation .nav-items a i{
+        display: none;
+      }
+
+      .navigation .nav-items a:not(:last-child){
+        margin-right: 45px;
+      }
+
+
+
+      /*======= Media icons =======*/
+      .media-icons{
+        z-index: 999;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        top: 50%;
+        transform: translateY(-50%);
+        margin-left: 90px;
+      }
+
+      .media-icons a{
+        color: var(--white-color);
+        font-size: 1.7em;
+        margin: 10px 0;
+      }
+
+      /*======= About section =======*/
+      .about h2{
+        font-size: 3em;
+        font-weight: 800;
+      }
+
+      .about p{
+        
+          /*background: linear-gradient(to bottom, #ffc6c6, #ffd1ac);   pink gradient */
+          padding: 0px; /* add some padding to the buttons */
+        
+          border-radius: 10px; /* add rounded corners to the background */
+        
+      }
+
+
+      /*-----------------*/
+
+
+
+
+
+      /*======= Media queries (max-width: 1100px) =======*/
+      @media screen and (max-width: 1100px){
+        header .nav-bar{
+          padding: 0 50px;
+        }
+
+        .section{
+          padding: 25px 50px;
+        }
+
+        .media-icons{
+          right: 0;
+          margin-right: 50px;
+        }
+
+        .swiper-slide .text-content{
+          margin: 0 120px 0 50px;
+        }
+
+        .bg-slider-thumbs{
+          bottom: 3em;
+        }
+      }
+
+
+
+      /*======= Media queries (max-width: 785px) =======*/
+      @media screen and (max-width: 785px){
+        header .nav-bar{
+          padding: 25px 20px;
+        }
+
+        .section{
+          padding: 25px 20px;
+        }
+
+        .media-icons{
+          margin-right: 20px;
+        }
+
+        .media-icons a{
+          font-size: 1.5em;
+        }
+
+        .swiper-slide .text-content{
+          margin: 0 70px 0 20px;
+        }
+
+        .swiper-slide .text-content .title{
+          font-size: 3em;
+        }
+
+        .swiper-slide .text-content .title span{
+          font-size: 0.35em;
+        }
+
+        .swiper-slide .text-content p{
+          font-size: 0.9em;
+        }
+
+        /*======= Navigation menu =======*/
+        .nav-menu-btn{
+          display: block;
+          color: var(--white-color);
+          font-size: 1.5em;
+          cursor: pointer;
+        }
+
+        .nav-close-btn{
+          display: block;
+          color: var(--dark-color);
+          position: absolute;
+          top: 0;
+          right: 0;
+          font-size: 1.3em;
+          margin: 10px;
+          cursor: pointer;
+          transition: 0.3s ease;
+        }
+
+        .navigation{
+          z-index: 99999;
+          position: fixed;
+          width: 100%;
+          height: 100vh;
+          top: 0;
+          left: 0;
+          background: rgba(0, 0, 0, 0.25);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          visibility: hidden;
+          opacity: 0;
+          transition: 0.3s ease;
+        }
+
+        .navigation.active{
+          visibility: visible;
+          opacity: 1;
+        }
+
+        .navigation .nav-items{
+          position: relative;
+          background: var(--white-color);
+          width: 400px;
+          max-width: 400px;
+          display: grid;
+          place-content: center;
+          margin: 20px;
+          padding: 40px;
+          border-radius: 20px;
+          box-shadow: var(--box-shadow);
+          transform: translateY(-200px);
+          transition: 0.3s ease;
+        }
+
+        .navigation.active .nav-items{
+          transform: translateY(0);
+        }
+
+        .navigation .nav-items a{
+          color: var(--dark-color);
+          font-size: 1em;
+          margin: 15px 50px;
+          transition: 0.3s ease;
+        }
+
+        .navigation .nav-items a:hover{
+          color: var(--navigation-item-hover-color);
+        }
+
+        .navigation .nav-items > a > i{
+          display: inline-block;
+          font-size: 1.3em;
+          margin-right: 5px;
+        }
+
+        .swiper-slide .text-content .read-btn{
+          font-size: 0.9em;
+          padding: 5px 15px;
+        }
+
+        /*======= About section =======*/
+        .about h2{
+          font-size: 2.5em;
+        }
+
+        .about p{
+          font-size: 0.9em;
+        }
+      }
+
+
+     /* Common styles for the back button */
+     .back-button {
+      position: relative;
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #f1f1f1;
+      border-radius: 30px;
+      color: #333;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      z-index: 1; /* Ensure the button is on top of the blurred strip */
+    }
+  
+    .back-button:hover {
+      background-color: #ddd;
+    }
+  
+    .back-button:active {
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    }
+  
+    /* Responsive styles for the back button */
+    @media only screen and (max-width: 600px) {
+      .back-button {
+        padding: 8px 16px;
+      }
+    }
+
+     /* Styles for the loading indicator */
+     .loading-indicator {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #f1f1f1;
+      font-size: 20px;
+      font-weight: bold;
+    }
+       
+            
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    
+    
+
+
+
+
+
+  </head>
+
+  <body>
+    
+    <header>
+      <div class="nav-bar">
+        <a href="../index.html" class="logo">logo</a>
+        <div class="navigation">
+          <div class="nav-items">
+            
+            <a href="#"><i class="uil uil-home"></i> Home</a>
+            <a href="#"><i class="uil uil-compass"></i> Explore</a>
+            <a href="#"><i class="uil uil-info-circle"></i> About</a>
+            <a href="#"><i class="uil uil-document-layout-left"></i> Blog</a>
+            <a href="#"><i class="uil uil-envelope"></i> Contact</a>
+           
+          </div>
+       </div>
+          <a class="back-button" href="./GO/chem.html" >Back</a>
+      
+      </div>
+    </header>
+
+    
+
+
+    <section class="about section ">
+      <h2><i class="uil uil-flask-potion"></i> PHYSICAL CHEMISTRY :</h2>
+      <p>
+       
+        
+
+
+
+      </p>
+    </section>  
+
+    <amp-story standalone
+    title="MOLE CONCEPT Important Formulas"
+    publisher="jeeneetard"
+    publisher-logo-src="atom.svg"
+    poster-portrait-src="atom.svg">
+
+
+    <amp-story-page id="cover">
+      <amp-story-grid-layer template="fill">
+        <amp-img src="./photos/Mole Concept/1.png"
+            width="720" height="1280"
+            layout="responsive"
+            alt="">
+        </amp-img> 
+    </amp-story-page>
+      <amp-story-grid-layer template="vertical">
+        <h1>Mole Concept</h1>
+        <p>Important Formulas</p>
+        <p>Quick memorisation!</p>
+
+      </amp-story-grid-layer>
+    
+    <amp-story-page id="page1">
+      <amp-story-grid-layer template="fill">
+        <amp-img src="./photos/Mole Concept/2.png"
+            width="720" height="1280"
+            layout="responsive"
+            alt="">
+        </amp-img>
+    </amp-story-page>
+      <amp-story-grid-layer template="thirds">
+            <h1>Moles.</h1>
+            <p>mole is just a quantity of any element.
+              1 mole is equal to 6.022×10^23.
+            </p>
+            
+      
+      </amp-story-grid-layer>
+
+      <amp-story-grid-layer template="vertical">
+            <h3>All ways to calculate moles are given ahead:</h3>
+      </amp-story-grid-layer>
+    
+
+
+  </amp-story>
+
+    
+
+  </body>
+
+</html>
