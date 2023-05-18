@@ -31,7 +31,24 @@ closeBtn.addEventListener("click", () => {
 });
 
 
+// Check if the browser supports the Fullscreen API
+if (document.documentElement.requestFullscreen) {
+  // Function to open the website in full-screen mode
+  function openFullscreen() {
+    if (document.documentElement.requestFullscreen) {
+      document.documentElement.requestFullscreen();
+    } else if (document.documentElement.mozRequestFullScreen) {
+      document.documentElement.mozRequestFullScreen();
+    } else if (document.documentElement.webkitRequestFullscreen) {
+      document.documentElement.webkitRequestFullscreen();
+    } else if (document.documentElement.msRequestFullscreen) {
+      document.documentElement.msRequestFullscreen();
+    }
+  }
 
+  // Call the function to open the website in full-screen mode
+  openFullscreen();
+}
 
 
 // Disable right-click
